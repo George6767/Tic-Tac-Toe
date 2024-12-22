@@ -20,5 +20,10 @@ namespace Tic_Tac_Toe
         {
             InitializeComponent();
         }
+
+        private void ColumnDefinition_IsKeyboardFocusWithinChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+
+        }
     }
 }
