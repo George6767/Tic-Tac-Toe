@@ -13,6 +13,16 @@ namespace Tic_Tac_Toe
         /// </summary>
         private MarkType[]? mResults;
 
+        /// <summary>
+        /// True if it is player 1's turn (x) or player 2's turn (0)
+        /// </summary>
+        private bool mPlayer1Turn;
+        /// <summary>
+        /// Tru if the game has ended
+        /// </summary>
+        private bool mGameEnd;
+
+
         #endregion
 
         #region Constructor
@@ -29,7 +39,7 @@ namespace Tic_Tac_Toe
         #endregion
         private void NewGame()
         {
-            throw new NotImplementedException();
+
         }
 
     }
