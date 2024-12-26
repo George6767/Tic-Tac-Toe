@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace Tic_Tac_Toe
 {
@@ -38,8 +39,22 @@ namespace Tic_Tac_Toe
 
         #endregion
         private void NewGame()
-        {
 
+        {   //Create a new blank array of free cells
+            mResults = new MarkType[9];
+
+            for (var i = 0; i < mResults.Length; i++)
+                mResults[i] = MarkType.Free;
+
+            // Make sure Player 1 starts the game
+            mPlayer1Turn = true;
+
+            // Interate every button on the grid...
+            Container.Children.Cast<Button>().ToList().ForEach(button =>
+            {
+
+            }
+            );
         }
 
     }
