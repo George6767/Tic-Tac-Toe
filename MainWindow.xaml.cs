@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace Tic_Tac_Toe
 {
@@ -52,10 +53,19 @@ namespace Tic_Tac_Toe
             // Interate every button on the grid...
             Container.Children.Cast<Button>().ToList().ForEach(button =>
             {
+                // Change background, foreground and content to default values
+                button.Content = string.Empty;
+                button.Background = Brushes.White;
+                button.Foreground = Brushes.Blue;
+            });
 
-            }
-            );
+            //make sure the game hasn't finished
+            mGameEnd = false;
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
