@@ -75,9 +75,10 @@ namespace Tic_Tac_Toe
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
+            // Start a new game on the click after it finished
             if (mGameEnd)
             {
-                // Start a new game on the click after it finished
                 NewGame();
                 return;
             }
@@ -85,14 +86,21 @@ namespace Tic_Tac_Toe
             var button = (Button)sender;
 
             // Find the buttons in the array
-            var colum = Grid.GetColumn(button);
+            var column = Grid.GetColumn(button);
             var row =Grid.GetRow(button);
 
-            var index = colum + (row * 30);
+            var index = column + (row * 3);
 
             // Don't do anyting if the cell already has a value in it
             if (mResults?[index] != MarkType.Free)
                 return;
+
+            // Set the cell value based on which players turn it is
+            mResults[index] = mPlayer1Turn ? MarkType.Cross : MarkType.Nought;
+
+            // Set button text to the result
+            button.Content = mPlayer1Turn ? "X" : "O";
+
         }
     }
 }
