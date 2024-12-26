@@ -75,7 +75,14 @@ namespace Tic_Tac_Toe
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (mGameEnd)
+            {
+                // Start a new game on the click after it finished
+                NewGame();
+                return;
+            }
 
+            var button = (Button)sender;
         }
     }
 }
