@@ -81,8 +81,18 @@ namespace Tic_Tac_Toe
                 NewGame();
                 return;
             }
-
+            // Cast the sender to a button
             var button = (Button)sender;
+
+            // Find the buttons in the array
+            var colum = Grid.GetColumn(button);
+            var row =Grid.GetRow(button);
+
+            var index = colum + (row * 30);
+
+            // Don't do anyting if the cell already has a value in it
+            if (mResults?[index] != MarkType.Free)
+                return;
         }
     }
 }
